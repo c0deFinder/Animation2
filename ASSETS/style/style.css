@@ -1,0 +1,399 @@
+* {
+    margin: 0px;
+   
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    background-color:aquamarine;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 1fr 10% 10fr 1fr 16%;
+    grid-template-areas: "header" 
+                         "aside" 
+                         "main"
+                         "Navegador"
+                         "footer";
+  
+}
+
+.navbar {
+    grid-area: header;
+    background: #d1fa3d;
+    grid-template-columns: 100%;
+    font-size: 22px;
+    padding: 8px;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+
+}
+
+.form {
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.form input {
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    background: none;
+    color: #26875f;
+    padding-top: 15px;
+    border: none;
+    font-size: 18px;
+   
+
+}
+.form .lbl-nombre {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #c7c7c7;
+}
+.form .lbl-nombre:after {
+    content:'';
+    position:absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #2ece2e;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.text-nomb {
+    position: absolute;
+    bottom: 5px;
+    transition: all 0.3s ease;
+    color: #2ece2e;
+    font-size: 22px;
+}
+.form input:focus + .lbl-nombre .text-nomb,.form input:valid + .lbl-nombre .text-nomb {
+    transform: translateX(150%);
+    transition: transform 1.5s;
+    font-size: 22px;
+    color: #2ece2e;
+}
+.form input:focus + .lbl-nombre::after,
+.form input:valid + .lbl-nombre::after {
+    transform: translateX(0%);
+}
+
+.navbar i {
+    float: right;
+    font-size: 3rem;
+    display: flex;
+    margin-left: 1.5rem;  
+}
+
+.navbar a{ 
+    text-decoration: none;
+   
+
+}
+
+.logo {
+    width: 4rem;
+    
+}
+
+.logo .sun {
+    fill: rgb(23, 54, 126);
+    stroke: none;
+}
+.logo .muntain {
+    fill: none;
+    stroke: none;
+}
+.logo:hover .muntain {
+    stroke: aqua;
+    fill: aqua;
+    stroke-width: 2px;
+    stroke-dasharray: 500;
+    transform: scale(10%) ;
+    transition: 2s ease-out;
+
+}
+.logo:hover .sun {
+    fill: rgb(10, 216, 106) ;
+    transition:1s ease-out ;
+    transform: translateX(7px);
+
+}
+.main {
+    grid-area: main;
+    background-color: aquamarine;
+    grid-template-columns: repeat(1, 1fr);
+    height: 65vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    display: grid;
+    flex-wrap: nowrap;
+
+     
+}
+
+.card {
+    background-color: aliceblue;
+    margin: 1rem;
+    padding: 0.6rem;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;   
+}
+
+
+.card button {
+    margin: 6px;
+    background-color:rgb(80, 235, 255);
+    height: 1.5rem;
+    border-radius: 4px;
+    border-color: rgb(0, 110, 255);
+    width: 6.25rem;
+}
+
+.card .tittle {
+    font-weight: bold;
+    margin-top: 0.625rem;
+    
+
+}
+
+.text0 {
+    text-align: justify;
+  text-justify: inter-word;
+  padding: 12px;
+  word-spacing: 1px;
+ 
+}
+
+button p {
+    color: azure;
+    font-size: 24px;
+    margin: 9px;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: aquamarine;
+    cursor: pointer;
+}
+.main img {
+    width: 100%;
+    min-width: 80%;
+    border-radius: 3px;
+    gap: 1rem;
+    grid-template-columns: repeat(1,1fr);
+    border: solid 4px;
+    border-color: aliceblue;
+    filter: grayscale(80%);
+}
+
+.main img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.024);
+
+}
+
+.aside {
+    grid-area:aside;
+    background-color: aliceblue;
+    height: 3.5rem;
+    padding:5px;
+    margin-top: 0px;
+}
+
+
+
+
+.aside h1 {
+    font-size: 15px;
+}
+
+.Navegador {
+    display: grid;
+    grid-area: Navegador;
+    display: flex;
+	color: aliceblue;
+	border-color: #7d9ce3, solid;
+    width: 100%;
+    height: 50px;
+	margin: 0%;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;	
+}
+.BarraNavegador {
+   
+	display: flex;
+    background-color: #7d9ce3;
+    justify-content: center;
+    
+	
+}
+
+.child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    padding: 1px;
+    margin: 1px;
+    border: #355ab0;
+    border: solid 0.55px;
+    border-radius: 2px;
+
+    
+}
+
+.footer i {
+    font-size: 22px;
+    color: azure;
+    padding: 5px;
+}
+
+footer p {
+    color: azure;
+}
+
+.footer { 
+	grid-area: footer;		
+    grid-template-columns: 100%;
+    background-color: rgb(8, 214, 255);
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+
+@media screen and (min-width:575px) {
+    body {
+        font-size: 20px;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:    "header aside" 
+                                "header main"
+                                "header main"
+                                "header Navegador"
+                                "footer footer";
+                                
+                                
+                            }
+}
+
+@media screen and (min-width:575px){
+    .main {
+        height: 75vh;
+        grid-template-columns: repeat(4,1fr);
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-shrink: 1;
+    }
+    .text0 {
+        height: 295px;
+        font-size: 18px;
+    }
+button {
+    margin-top: 0.5rem;
+}
+
+img {
+    height: 180px;
+}
+.card { 
+    height: 500px;
+
+}
+
+}
+
+@media screen and (min-width:575px) {
+
+    .navbar { 
+       
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: left;
+        font-size: 18px;
+       
+    }
+
+    .navbar i {
+        display:none !important;
+}
+    .navbar img {
+        margin-left:2.5rem;
+        margin-top: 0.5rem;
+    }
+
+    }
+    
+
+
+@media screen and (min-width:575px) {
+    .footer {
+        
+        
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+    .rrss {
+        font-weight: bold;
+        padding: 5px;
+
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+
+
